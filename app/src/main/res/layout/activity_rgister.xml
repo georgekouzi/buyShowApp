@@ -62,14 +62,14 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
         android:hint="Password "
-        android:inputType="number"
+        android:inputType="textPassword"
         android:textColor="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="17sp"
         android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/register_btn"
+        android:id="@+id/buyer_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_password_input"
@@ -79,11 +79,34 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/buttons"
         android:padding="17dp"
-        android:text="Create Account"
+        android:text="Create Buyer Account"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         />
+    <Button
+        android:id="@+id/seller_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buyer_account"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:padding="17dp"
+        android:text="Create Seller Account"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        />
+
+
+
+
+
+
+
 
 
 

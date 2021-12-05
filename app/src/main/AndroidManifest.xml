@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BuyShow">
         <activity
+            android:name=".BuyerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SellersActivity"
+            android:exported="true" />
+        <activity
             android:name=".RgisterActivity"
             android:exported="true" />
         <activity

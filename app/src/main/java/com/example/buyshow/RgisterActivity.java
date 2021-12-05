@@ -24,30 +24,44 @@ import java.sql.DatabaseMetaData;
 import java.util.HashMap;
 
 public class RgisterActivity extends AppCompatActivity {
-private Button createAccountButton;
+private Button createAccountBuyerButton;
+private Button createAccountSellerButton;
 private EditText InputName, InputPhoneNumber,InputPassword;
 private ProgressDialog loadingBar;
+private String ParentDB="Buyer";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rgister);
-        createAccountButton = (Button) findViewById(R.id.register_btn);
+        createAccountBuyerButton = (Button) findViewById(R.id.buyer_account);
+        createAccountSellerButton =  (Button) findViewById(R.id.seller_account);
         InputName = (EditText) findViewById(R.id.register_username_input);
         InputPhoneNumber = (EditText) findViewById(R.id.register_phone_number_input);
         InputPassword = (EditText) findViewById(R.id.register_password_input);
         loadingBar = new ProgressDialog(this);
 
-createAccountButton.setOnClickListener(new View.OnClickListener() {
+        createAccountBuyerButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-
+        ParentDB="Buyer";
         CreateAccount();
 
 
     }
 });
 
+        createAccountSellerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParentDB="Seller";
+                CreateAccount();
+            }
+        });
+
     }
+
 
 private void CreateAccount(){
         String name = InputName.getText().toString();
@@ -63,7 +77,7 @@ private void CreateAccount(){
         Toast.makeText(this,"Please write your password",Toast.LENGTH_SHORT).show();
     }
     else{
-loadingBar.setTitle("Create Account");
+            loadingBar.setTitle("Create Account");
             loadingBar.setMessage("Pleas wait, while we are checking the credentials.");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
@@ -75,20 +89,20 @@ loadingBar.setTitle("Create Account");
 
     private void ValidaephoneNumber(String name, String phone, String password) {
 
-final DatabaseReference RootRef;
+        final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot)
             {
-            if(!(snapshot.child("User").child(phone).exists())){
+            if(!(snapshot.child(ParentDB).child(phone).exists())){
 
                 HashMap<String,Object> userDataMap=new HashMap<>();
-                userDataMap.put("phon",phone);
+                userDataMap.put("phone",phone);
                 userDataMap.put("password",password);
                 userDataMap.put("name",name);
 
-                RootRef.child("User").child(phone).updateChildren(userDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                RootRef.child(ParentDB).child(phone).updateChildren(userDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){

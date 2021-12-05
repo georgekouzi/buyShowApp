@@ -43,7 +43,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
         android:hint="Password "
-        android:inputType="number"
+        android:inputType="textPassword"
         android:textColor="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="17sp"
@@ -91,19 +91,32 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/buttons"
         android:padding="17dp"
-        android:text="Login"
+        android:text="Login Buyer"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         />
 
+
     <TextView
-        android:id="@+id/admin_panel_link"
+        android:id="@+id/op1_panel_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_btn"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginEnd="23dp"
+        android:text="for Seller user"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/op2_panel_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="for Admin user"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/login_btn"
+        android:layout_below="@+id/op1_panel_link"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -111,20 +124,35 @@
         android:layout_marginEnd="23dp"
         />
 
-    <TextView
-        android:id="@+id/not_admin_panel_link"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="no Admin user"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/login_btn"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="80dp"
-        android:layout_marginStart="23dp"
-        android:visibility="invisible"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/buyer_panel_link"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/login_btn"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginLeft="80dp"-->
+<!--        android:layout_marginEnd="23dp"-->
+<!--        android:text="for Buyer user"-->
+<!--        android:textColor="@color/colorPrimaryDark"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:visibility="invisible"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/not_admin_panel_link"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/login_btn"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="261dp"-->
+<!--        android:layout_marginLeft="80dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:text="no Admin user"-->
+<!--        android:textColor="@color/colorPrimaryDark"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:visibility="invisible" />-->
 
 
 </RelativeLayout>
