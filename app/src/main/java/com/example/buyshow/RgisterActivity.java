@@ -76,7 +76,8 @@ private void CreateAccount(){
     else if (TextUtils.isEmpty(password)){
         Toast.makeText(this,"Please write your password",Toast.LENGTH_SHORT).show();
     }
-    else{
+    else
+        {
             loadingBar.setTitle("Create Account");
             loadingBar.setMessage("Pleas wait, while we are checking the credentials.");
             loadingBar.setCanceledOnTouchOutside(false);
@@ -101,7 +102,7 @@ private void CreateAccount(){
                 userDataMap.put("phone",phone);
                 userDataMap.put("password",password);
                 userDataMap.put("name",name);
-
+                // RootRef is reference to the firebase
                 RootRef.child(ParentDB).child(phone).updateChildren(userDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

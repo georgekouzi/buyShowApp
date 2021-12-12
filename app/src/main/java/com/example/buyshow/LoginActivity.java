@@ -26,7 +26,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText InputPhoneNumber, InputPassword;
     private Button LoginButton;
     private ProgressDialog loadingBar;
+    //switch user
     static TextView Op1Link,Op2Link;
+
     private String ParentDB="Buyer";
 
     @Override
@@ -38,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         InputPassword = (EditText) findViewById(R.id.login_password_input);
         InputPhoneNumber = (EditText) findViewById(R.id.login_phone_number_input);
         loadingBar = new ProgressDialog(this);
+
         Op1Link = (TextView) findViewById(R.id.op1_panel_link);
         Op2Link = (TextView) findViewById(R.id.op2_panel_link);
 
@@ -133,6 +136,7 @@ public class LoginActivity extends AppCompatActivity {
                     User usersData =snapshot.child(ParentDB).child(phone).getValue(User.class);
 //                    if(usersData.getPhone().equals(phone)){
                         if(usersData.getPassword().equals(password)){
+
                             if(ParentDB.equals("Buyer")){
                             Toast.makeText(LoginActivity.this,"your logged in Successfully."+ParentDB,Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
