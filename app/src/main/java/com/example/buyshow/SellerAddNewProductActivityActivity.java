@@ -13,6 +13,6 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller_add_new_product_activity);
         categoryName =  getIntent().getExtras().get("category").toString();
-        Toast.makeText(this, categoryName, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, categoryName, Toast.LENGTH_SHORT).show();
     }
 }
