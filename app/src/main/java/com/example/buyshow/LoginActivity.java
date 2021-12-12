@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
                             else if(ParentDB.equals("Seller")){
                                 Toast.makeText(LoginActivity.this,"your logged in Successfully.",Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Intent intent=new Intent(LoginActivity.this, SellersActivity.class);
+                                Intent intent=new Intent(LoginActivity.this, SellersCategoryActivity.class);
                                 startActivity(intent);
                             }
 
