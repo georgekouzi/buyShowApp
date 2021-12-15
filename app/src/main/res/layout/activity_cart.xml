@@ -9,12 +9,14 @@
     tools:context=".CartActivity">
 
     <RelativeLayout
+        android:id="@+id/rll11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         android:layout_alignParentTop="true">
 
         <TextView
+            android:id="@+id/total_price"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Total Price = "
@@ -25,16 +27,24 @@
             />
 
     </RelativeLayout>
+    <android.support.recyclerview.widget.RecyclerView
+    android:id="@+id/cart_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/rll11"
+    android:layout_above="@+id/next_proces_btn">
+    </android.support.recyclerview.widget.RecyclerView>
 
     <Button
+        android:id="@+id/next_proces_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="next"
+        android:layout_marginTop="10dp"
         android:background="@color/colorPrimaryDark"
+        android:text="next"
         android:textColor="@color/white"
         android:textSize="20dp"
-        android:layout_marginTop="10dp"
 
         />
 
