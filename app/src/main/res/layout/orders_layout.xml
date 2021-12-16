@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/buyer_name"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="buyer-name"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="2dp"
+            android:textStyle="bold"
+            />
+
+
+
+        <TextView
+            android:id="@+id/phone_number"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Phone-number"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="2dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total-price"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/phone_number"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            />
+        <TextView
+            android:id="@+id/order_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/total_price"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            />
+        <TextView
+            android:id="@+id/date_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date Time"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/order_address"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            />
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

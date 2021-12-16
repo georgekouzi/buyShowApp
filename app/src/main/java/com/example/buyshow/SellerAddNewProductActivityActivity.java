@@ -32,7 +32,7 @@ import java.util.HashMap;
 
 
 public class SellerAddNewProductActivityActivity extends AppCompatActivity {
-    private String categoryName ,description,price,name ,saveCurrentDate,saveCurrentTime;
+    private String phone_id ,categoryName ,description,price,name ,saveCurrentDate,saveCurrentTime;
     private Button addNewProductButton;
     private ImageView productImage;
     private EditText productName,productDescription,productPrice;
@@ -48,12 +48,13 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller_add_new_product_activity);
         categoryName =  getIntent().getExtras().get("category").toString();
+        phone_id = getIntent().getExtras().get("phone_id").toString();
         addNewProductButton = (Button) findViewById(R.id.add_new_product);
         productImage = (ImageView) findViewById(R.id.select_product_image);
         productName = (EditText) findViewById(R.id.product_name);
         productDescription = (EditText) findViewById(R.id.product_description);
         productPrice = (EditText) findViewById(R.id.product_price);
-        productImageRef = FirebaseStorage.getInstance().getReference().child("Product Images");
+        productImageRef = FirebaseStorage.getInstance().getReference().child("ProductHolder Images");
         productRef =FirebaseDatabase.getInstance().getReference().child("Products");
         loadingBar = new ProgressDialog(this);
 
@@ -190,7 +191,7 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
         productMap.put("price",price);
         productMap.put("name",name);
 
-        productRef.child(productRandomKey).updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        productRef.child(phone_id+" "+productRandomKey).updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){

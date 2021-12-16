@@ -29,11 +29,13 @@ public class SellersCategoryActivity extends AppCompatActivity {
         mobiles= (ImageView) findViewById(R.id.mobiles);
 
 
+
         tshirts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","tshirts");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
 
             }
@@ -43,6 +45,8 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","tsports");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
+
                 startActivity(intent);
             }
         });
@@ -51,6 +55,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","femaledresses");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -59,6 +64,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","sweather");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -67,6 +73,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","glasses");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -75,6 +82,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","pursesbags");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -83,6 +91,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","hats");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -91,6 +100,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","shoess");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -99,6 +109,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","headphoness");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -107,6 +118,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","laptops");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -115,6 +127,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","watches");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
@@ -123,6 +136,7 @@ public class SellersCategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SellersCategoryActivity.this,SellerAddNewProductActivityActivity.class);
                 intent.putExtra("category","mobiles");
+                intent.putExtra("phone_id",getIntent().getExtras().get("phone_id").toString());
                 startActivity(intent);
             }
         });
