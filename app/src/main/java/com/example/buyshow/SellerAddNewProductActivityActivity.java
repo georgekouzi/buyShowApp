@@ -136,7 +136,7 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
         SimpleDateFormat currentTime =new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentTime.format(calendar.getTime());
         //when the seller add new product then Current Date + Current Time this will be a uniqe random key ,it will not be refutable key because it contain the seconds
-        productRandomKey = saveCurrentDate+saveCurrentTime;
+        productRandomKey = phone_id+" "+saveCurrentDate+saveCurrentTime;
 
         StorageReference filePath = productImageRef.child(imageUri.getLastPathSegment()+productRandomKey+".jpg");
         final UploadTask uploadTask =filePath.putFile(imageUri);
@@ -189,11 +189,11 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
         productMap.put("description",description);
         productMap.put("image",downloadImageUrl);
         productMap.put("category",categoryName);
-        productMap.put("price",price);
+        productMap.put("price","Price "+price+"$");
         productMap.put("name",name);
 
 
-        productRef.child(phone_id+" "+productRandomKey).updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        productRef.child(productRandomKey).updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){

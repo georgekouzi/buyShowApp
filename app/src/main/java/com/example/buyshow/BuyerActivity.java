@@ -58,6 +58,15 @@ public class BuyerActivity extends AppCompatActivity {
             holder.txtProductPrice.setText(model.getPrice());
             holder.txtProductDescription.setText(model.getDescription());
             Picasso.get().load(model.getImage()).into(holder.imageView);
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(BuyerActivity.this,ProductDetailsActivity.class);
+                    intent.putExtra("pid",model.getPid());
+                    startActivity(intent);
+                }
+            });
             }
 
             @NonNull
