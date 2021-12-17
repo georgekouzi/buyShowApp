@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/register"
+    android:background="@drawable/register_logo"
     tools:context=".RgisterActivity">
 
     <ImageView
         android:id="@+id/register_applogo"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:src="@drawable/applogo"
+        android:src="@drawable/best_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="190dp"/>
 
@@ -20,13 +20,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_applogo"
-        android:background="@drawable/inputs"
-        android:padding="20dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:background="@drawable/inputs"
         android:hint="Name"
         android:inputType="text"
-        android:textColor="@color/colorPrimaryDark"
+        android:padding="20dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="17sp"
         android:textStyle="bold" />
@@ -56,25 +56,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_phone_number_input"
-        android:background="@drawable/inputs"
-        android:padding="20dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/inputs"
         android:hint="Password "
         android:inputType="textPassword"
-        android:textColor="@color/colorPrimaryDark"
+        android:padding="20dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="17sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buyer_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_password_input"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/buttons"
@@ -82,8 +82,7 @@
         android:text="Create Buyer Account"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
-        />
+        android:textSize="18sp" />
     <Button
         android:id="@+id/seller_account"
         android:layout_width="match_parent"

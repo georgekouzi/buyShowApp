@@ -23,13 +23,14 @@ public class SellersActivity extends AppCompatActivity {
         deleteProduct=(Button) findViewById(R.id.delete_product);
         viewYourUploadedProducts=(Button) findViewById(R.id.view_your_uploaded_products);
 
-//        checkOrder.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent=new Intent(SellersActivity.this,LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        viewYourUploadedProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SellersActivity.this,SellerProductActivity.class);
+                intent.putExtra("phone_id",phone);
+                startActivity(intent);
+            }
+        });
 
         addProduct.setOnClickListener(new View.OnClickListener() {
             @Override

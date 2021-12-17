@@ -1,13 +1,14 @@
 package com.example.buyshow.Model;
 
 public class products {
-    private String category,date,description,image,name,pid,price,time;
+    private String phone_id,category,date,description,image,name,pid,price,time;
 
     public products() {
 
     }
 
-    public products(String category, String date, String description, String image, String name, String pid, String price, String time) {
+    public products(String phone_id,String category, String date, String description, String image, String name, String pid, String price, String time) {
+        this.phone_id =phone_id;
         this.category = category;
         this.date = date;
         this.description = description;
@@ -16,6 +17,13 @@ public class products {
         this.pid = pid;
         this.price = price;
         this.time = time;
+    }
+    public String getPhone_id() {
+        return phone_id;
+    }
+
+    public void setPhone_id(String phone_id) {
+        this.phone_id = phone_id;
     }
 
     public String getCategory() {

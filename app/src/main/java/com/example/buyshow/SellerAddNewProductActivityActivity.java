@@ -32,7 +32,7 @@ import java.util.HashMap;
 
 
 public class SellerAddNewProductActivityActivity extends AppCompatActivity {
-    private String phone_id ,categoryName ,description,price,name ,saveCurrentDate,saveCurrentTime;
+    private String phone_id ,categoryName ,description,price,name,saveCurrentDate,saveCurrentTime;
     private Button addNewProductButton;
     private ImageView productImage;
     private EditText productName,productDescription,productPrice;
@@ -182,6 +182,7 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
 
     private void saveProductInfoToDatabase() {
         HashMap<String,Object> productMap = new HashMap<>();
+        productMap.put("phone_id",phone_id);
         productMap.put("pid",productRandomKey);
         productMap.put("date",saveCurrentDate);
         productMap.put("time",saveCurrentTime);
@@ -190,6 +191,7 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
         productMap.put("category",categoryName);
         productMap.put("price",price);
         productMap.put("name",name);
+
 
         productRef.child(phone_id+" "+productRandomKey).updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
