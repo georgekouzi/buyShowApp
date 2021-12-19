@@ -53,7 +53,7 @@
        android:textSize="18sp" />
 
    <Button
-       android:id="@+id/delete_product"
+       android:id="@+id/view_your_uploaded_products"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_below="@+id/add_product"
@@ -63,22 +63,7 @@
        android:layout_marginBottom="10dp"
        android:background="@drawable/buttons"
        android:padding="17dp"
-       android:text="Delete Product "
-       android:textAllCaps="false"
-       android:textColor="@android:color/white"
-       android:textSize="18sp" />
-   <Button
-       android:id="@+id/view_your_uploaded_products"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_below="@+id/delete_product"
-       android:layout_marginLeft="15dp"
-       android:layout_marginTop="5dp"
-       android:layout_marginRight="15dp"
-       android:layout_marginBottom="10dp"
-       android:background="@drawable/buttons"
-       android:padding="17dp"
-       android:text="View your uploaded products"
+       android:text="My uploaded products"
        android:textAllCaps="false"
        android:textColor="@android:color/white"
        android:textSize="18sp" />

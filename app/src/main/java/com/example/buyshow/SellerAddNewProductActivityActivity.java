@@ -92,9 +92,7 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
             productImage.setImageURI(imageUri);
             Toast.makeText(this,imageUri.toString(),Toast.LENGTH_SHORT).show();
 
-
         }
-
     }
 
     private void validateProductData() {

@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class SellersActivity extends AppCompatActivity {
-    private Button checkOrder ,addProduct,deleteProduct,viewYourUploadedProducts;
+    private Button checkOrder ,addProduct,viewYourUploadedProducts;
     private String phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,6 @@ public class SellersActivity extends AppCompatActivity {
 
         checkOrder=(Button) findViewById(R.id.check_order);
         addProduct=(Button) findViewById(R.id.add_product);
-        deleteProduct=(Button) findViewById(R.id.delete_product);
         viewYourUploadedProducts=(Button) findViewById(R.id.view_your_uploaded_products);
 
         viewYourUploadedProducts.setOnClickListener(new View.OnClickListener() {

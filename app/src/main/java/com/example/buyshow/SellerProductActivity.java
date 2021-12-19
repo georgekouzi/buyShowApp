@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,6 +55,19 @@ public class SellerProductActivity extends AppCompatActivity {
                     holder.txtProductPrice.setText(model.getPrice());
                     holder.txtProductDescription.setText(model.getDescription());
                     Picasso.get().load(model.getImage()).into(holder.imageView);
+
+                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(SellerProductActivity.this,SellerProductDetailsActivity.class);
+                            intent.putExtra("pid",model.getPid());
+                            intent.putExtra("phone_id",model.getPhone_id());
+                            intent.putExtra("Image_uri",model.getImage());
+
+                            startActivity(intent);
+                        }
+                    });
+
                 }
                 else{
                     holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
