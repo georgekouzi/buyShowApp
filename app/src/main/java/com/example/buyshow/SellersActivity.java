@@ -15,8 +15,8 @@ public class SellersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sellers);
+
         phone = getIntent().getExtras().get("phone").toString();
-        Toast.makeText(SellersActivity.this,phone,Toast.LENGTH_SHORT).show();
 
         checkOrder=(Button) findViewById(R.id.check_order);
         addProduct=(Button) findViewById(R.id.add_product);
@@ -26,6 +26,7 @@ public class SellersActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(SellersActivity.this,SellerProductActivity.class);
+                //A function that allows you to move arguments from one page to another
                 intent.putExtra("phone_id",phone);
                 startActivity(intent);
             }
@@ -39,13 +40,6 @@ public class SellersActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        deleteProduct.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent=new Intent(SellersActivity.this,LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 //
 //        viewYourUploadedProducts.setOnClickListener(new View.OnClickListener() {
 //            @Override

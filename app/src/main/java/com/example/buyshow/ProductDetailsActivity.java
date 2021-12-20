@@ -36,6 +36,7 @@ private String productId="";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
+
         productId=getIntent().getExtras().get("pid").toString();
 //        Toast.makeText(ProductDetailsActivity.this,productId,Toast.LENGTH_SHORT).show();
 
@@ -43,18 +44,16 @@ private String productId="";
         productName = (TextView) findViewById(R.id.product_name_d);
         productDetails = (TextView) findViewById(R.id.product_details_d);
         productPrice = (TextView) findViewById(R.id.product_price_d);
-
         productImage = (ImageView) findViewById(R.id.product_image_d);
-
-
         buttonBack =(Button) findViewById(R.id.button_back);
         buttonAddProductToCart =(Button) findViewById(R.id.button_add_product_to_cart_d);
 
         DatabaseReference getProductInfoDB = FirebaseDatabase.getInstance().getReference().child("Products");
+        //This trigger allows access to a database for the same product and saves the variables so that it can overwrite the text currently written there by the model of the same product.
+        //And the picasso function allows for a more beautiful display
         getProductInfoDB.child(productId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Toast.makeText(ProductDetailsActivity.this,productId,Toast.LENGTH_SHORT).show();
 
                 if(snapshot.exists()){
                     products productsD=snapshot.getValue(products.class);

@@ -84,16 +84,19 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
     }
 
     @Override
+    //This function receives the image and checks whether the request has arrived and whether the data taken is not blank
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if(resultCode==RESULT_OK&&data!=null){
 
             imageUri = data.getData();
             productImage.setImageURI(imageUri);
-            Toast.makeText(this,imageUri.toString(),Toast.LENGTH_SHORT).show();
-
         }
     }
+    /*
+    This function extracts the data entered by the user and checks end cases and sends messages accordingly.
+     */
 
     private void validateProductData() {
         description= productDescription.getText().toString();
@@ -137,6 +140,7 @@ public class SellerAddNewProductActivityActivity extends AppCompatActivity {
         productRandomKey = phone_id+" "+saveCurrentDate+saveCurrentTime;
 
         StorageReference filePath = productImageRef.child(imageUri.getLastPathSegment()+productRandomKey+".jpg");
+        //An controllable task that uploads and fires events for success, progress and failure. It also allows pause and resume to control the upload operation.
         final UploadTask uploadTask =filePath.putFile(imageUri);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override

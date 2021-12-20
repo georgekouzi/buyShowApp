@@ -27,7 +27,7 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 public class SellerProductDetailsActivity extends AppCompatActivity {
-private String pid,phoneId,image_uri;
+    private String pid,phoneId,image_uri;
     private TextView productPrice,productName,productDetails;
     private ImageView productImage;
     private Button buttonBack,buttonDeleteProduct;
@@ -64,10 +64,10 @@ private String pid,phoneId,image_uri;
         getProductInfoDB.child(pid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Toast.makeText(SellerProductDetailsActivity.this,pid,Toast.LENGTH_SHORT).show();
 
                 if(snapshot.exists()){
                     products productsD=snapshot.getValue(products.class);
+
                     productName.setText(productsD.getName());
                     productDetails.setText(productsD.getDescription());
                     productPrice.setText(productsD.getPrice());
