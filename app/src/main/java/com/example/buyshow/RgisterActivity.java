@@ -22,7 +22,19 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.sql.DatabaseMetaData;
 import java.util.HashMap;
+/*
 
+We have created 2 buttons that are connected to our xml and each has an id that when you click on a certain button he knows which button it is.
+Below line 23 you can see the function SetOnClickListener-listener.
+We listen to our buttons that we have already initialized.
+So if a certain button is pressed - it will move us to a certain screen.
+Intent This is a function that accepts the current screen we are on and the screen we want to switch to.
+
+And in lines 26-27 we are in the MainActivity screen and want to switch to LoginActivity and then the StartActivity function activates Intent and causes us to move to another screen.
+And the same thing when we want to switch to RegisterActivity - which is the registration screen.
+
+
+ */
 public class RgisterActivity extends AppCompatActivity {
 private Button createAccountBuyerButton;
 private Button createAccountSellerButton;

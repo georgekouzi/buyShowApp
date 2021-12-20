@@ -23,11 +23,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 public class SellerProductActivity extends AppCompatActivity {
-    private Button LogoutBtn;
     private DatabaseReference productsRef;
     private RecyclerView recyclerView;
     private String phone_id;
-    //    RecyclerView.LayoutManager layoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +47,6 @@ public class SellerProductActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull ProductHolder holder, int position, @NonNull products model) {
                 if(model.getPhone_id().equals(phone_id)) {
-//                    Toast.makeText(SellerProductActivity.this,"innnnnnnnnnnnnnnnn",Toast.LENGTH_SHORT).show();
 
                     holder.txtProductName.setText(model.getName());
                     holder.txtProductPrice.setText(model.getPrice());

@@ -21,38 +21,32 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
-
+/*
+This is a class of the screen that the buyer moves to, where all the items that the sellers have uploaded are located. */
 public class BuyerActivity extends AppCompatActivity {
-    private Button LogoutBtn;
     private DatabaseReference productsRef;
     private RecyclerView recyclerView;
-//    RecyclerView.LayoutManager layoutManager;
-
+//In this function we correct the variables and request a reference for all products from the database.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buyer);
+
         productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
+        //RecycleView object - allows you to arrange list details for display
         recyclerView = (RecyclerView)findViewById(R.id.buyer_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-
-//        recyclerView.setHasFixedSize(true);
-//        layoutManager = new LinearLayoutManager(this);
-
-
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseRecyclerOptions<products> options = new FirebaseRecyclerOptions.Builder<products>().setQuery(productsRef,products.class).build();
 
+        FirebaseRecyclerOptions<products> options = new FirebaseRecyclerOptions.Builder<products>().setQuery(productsRef,products.class).build();
 
         FirebaseRecyclerAdapter<products, ProductHolder> adapter = new FirebaseRecyclerAdapter<products, ProductHolder>(options) {
             @Override
+        //We wish for the variables and override the initial text that was before.
             protected void onBindViewHolder(@NonNull ProductHolder holder, int position, @NonNull products model) {
             holder.txtProductName.setText(model.getName());
             holder.txtProductPrice.setText(model.getPrice());
@@ -71,6 +65,10 @@ public class BuyerActivity extends AppCompatActivity {
 
             @NonNull
             @Override
+            //This function gets the view:
+            //And it sends it to a function
+            //onBindViewHolder to update the
+            //The details.
             public ProductHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.products_item_layout,parent,false);
                 ProductHolder holder =new ProductHolder(view);
@@ -78,6 +76,8 @@ public class BuyerActivity extends AppCompatActivity {
 
             }
         };
+
+
         recyclerView.setAdapter(adapter);
         adapter.startListening();
 
