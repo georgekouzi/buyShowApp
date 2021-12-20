@@ -28,7 +28,7 @@ private Button createAccountBuyerButton;
 private Button createAccountSellerButton;
 private EditText InputName, InputPhoneNumber,InputPassword;
 private ProgressDialog loadingBar;
-private String ParentDB="Buyer";
+private String ParentDB=" ";
 
 
     @Override
@@ -47,8 +47,6 @@ private String ParentDB="Buyer";
     public void onClick(View view) {
         ParentDB="Buyer";
         CreateAccount();
-
-
     }
 });
 
@@ -62,7 +60,13 @@ private String ParentDB="Buyer";
 
     }
 
+/*Create three strings for the user's name, phone and password.
+- We did tests and end cases for entering the details: each case separately.
+(If one of the fields is empty and makes an error)
+- When the user has filled in the fields and the registration was successful,
+Define the loading screen, and the message displayed on the screen.
 
+ */
 private void CreateAccount(){
         String name = InputName.getText().toString();
         String phone = InputPhoneNumber.getText().toString();
@@ -87,9 +91,13 @@ private void CreateAccount(){
 
         }
     }
-
+/*
+This function creates a user, and before that checks whether the user already exists - his cell phone number is already updated in the system. And if it is updated then it sends the user an error message and returns it to the login screen.
+And if not, it creates a new user with its details and saves it in the database.
+Then an oncomplete function that checks if the registration was successful - sends a message and forwards it to the login screen.
+If failed, sends error.
+ */
     private void ValidaephoneNumber(String name, String phone, String password) {
-
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -97,7 +105,6 @@ private void CreateAccount(){
             public void onDataChange(@NonNull DataSnapshot snapshot)
             {
             if(!(snapshot.child(ParentDB).child(phone).exists())){
-
                 HashMap<String,Object> userDataMap=new HashMap<>();
                 userDataMap.put("phone",phone);
                 userDataMap.put("password",password);
@@ -115,7 +122,6 @@ private void CreateAccount(){
                         else{
                             loadingBar.dismiss();
                             Toast.makeText(RgisterActivity.this,"Network Error: please try again.",Toast.LENGTH_SHORT).show();
-
                         }
                     }
                 });

@@ -6,6 +6,9 @@
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/drawable/buttons.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/drawable/ic_menu_camera.xml" value="0.12777777777777777" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.12777777777777777" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.12777777777777777" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/drawable/inputs.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_Buyer.xml" value="0.13072916666666667" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_admin.xml" value="0.19074074074074074" />
@@ -16,7 +19,7 @@
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_login.xml" value="0.2425249169435216" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_product_details.xml" value="0.1" />
-        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_rgister.xml" value="0.4" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_rgister.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_add_new_product_activity.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_add_product.xml" value="0.10185185185185185" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_product.xml" value="0.2390625" />
