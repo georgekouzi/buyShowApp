@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loadingBar;
     //switch user
     static TextView Op1Link,Op2Link;
+
     private String ParentDB="Buyer";
 
     @Override
@@ -41,9 +42,9 @@ Initialize the buttons on the login screen, and save the information that the us
         InputPassword = (EditText) findViewById(R.id.login_password_input);
         InputPhoneNumber = (EditText) findViewById(R.id.login_phone_number_input);
         loadingBar = new ProgressDialog(this);
+
         Op1Link = (TextView) findViewById(R.id.op1_panel_link);
         Op2Link = (TextView) findViewById(R.id.op2_panel_link);
-
 
 /*
 This function is associated with the login screen when there are several login buttons.
@@ -52,6 +53,7 @@ The default type displayed on the main button is the buyer.
 And the 2 side buttons are the manager's or seller's.
 If the user is a manager or seller when he presses the button, the main button of the login will change accordingly and so will the 2 side buttons.
  */
+
         Op1Link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,6 +94,10 @@ If the user is a manager or seller when he presses the button, the main button o
 
 
 
+
+
+
+
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,13 +106,16 @@ If the user is a manager or seller when he presses the button, the main button o
         });
 
 
+
+
+
+
     }
     /*
-    In this function, we check the information entered by the user, and check if it is correct.
-If they are not then an error message is sent for the same field.
-And if all goes well, move to the loading screen.
-     */
-
+       In this function, we check the information entered by the user, and check if it is correct.
+   If they are not then an error message is sent for the same field.
+   And if all goes well, move to the loading screen.
+        */
     private void LoginUser() {
         String phone = InputPhoneNumber.getText().toString();
         String password = InputPassword.getText().toString();
@@ -126,7 +135,7 @@ And if all goes well, move to the loading screen.
          }
 
     }
-    /*
+      /*
 
 This function asks for a reference to our database in order to access the details of the users and search for the same user who entered his details in order to log into his account.
 If the user does not exist then an error message is sent.
@@ -137,6 +146,8 @@ And if the password is not the same then an error message is sent and the login 
      */
 
     private void AllowAccessToAccount(String phone, String password) {
+
+
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -168,6 +179,8 @@ And if the password is not the same then an error message is sent and the login 
                                 startActivity(intent);
                             }
 
+
+
                     }
 
                         else{
@@ -175,6 +188,7 @@ And if the password is not the same then an error message is sent and the login 
                             loadingBar.dismiss();
                             Intent intent=new Intent(LoginActivity.this,LoginActivity.class);
                             startActivity(intent);
+
                         }
                 }
                 else {
