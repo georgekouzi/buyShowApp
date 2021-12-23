@@ -9,16 +9,20 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.buyshow.Model.User;
+import com.example.buyshow.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import io.paperdb.Paper;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -28,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loadingBar;
     //switch user
     static TextView Op1Link,Op2Link;
+    private CheckBox RememberUser;
 
     private String ParentDB="Buyer";
 
@@ -42,7 +47,8 @@ Initialize the buttons on the login screen, and save the information that the us
         InputPassword = (EditText) findViewById(R.id.login_password_input);
         InputPhoneNumber = (EditText) findViewById(R.id.login_phone_number_input);
         loadingBar = new ProgressDialog(this);
-
+        RememberUser =  (CheckBox) findViewById(R.id.remember_me_chkb);
+        Paper.init(this);
         Op1Link = (TextView) findViewById(R.id.op1_panel_link);
         Op2Link = (TextView) findViewById(R.id.op2_panel_link);
 
@@ -146,7 +152,18 @@ And if the password is not the same then an error message is sent and the login 
      */
 
     private void AllowAccessToAccount(String phone, String password) {
+        if(RememberUser.isChecked()){
+        Paper.book().write(Prevalent.UserPasswordKey,password);
+        Paper.book().write(Prevalent.UserPhoneKey,phone);
+        Paper.book().write(Prevalent.UserTypeKey,ParentDB);
 
+
+        }
+
+
+        if(ParentDB.equals("Buyer")){
+
+        }
 
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
@@ -155,13 +172,16 @@ And if the password is not the same then an error message is sent and the login 
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.child(ParentDB).child(phone).exists()) {
                     User usersData =snapshot.child(ParentDB).child(phone).getValue(User.class);
+
 //                    if(usersData.getPhone().equals(phone)){
                         if(usersData.getPassword().equals(password)){
+
 
                             if(ParentDB.equals("Buyer")){
                             Toast.makeText(LoginActivity.this,"your logged in Successfully."+ParentDB,Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
                             Intent intent=new Intent(LoginActivity.this, BuyerActivity.class);
+                            intent.putExtra("phoneBuyer",phone);
                             startActivity(intent);
                         }
                             else if(ParentDB.equals("Admin")){

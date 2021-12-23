@@ -27,13 +27,13 @@
             />
 
     </RelativeLayout>
-    <android.support.recyclerview.widget.RecyclerView
+
+    <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/cart_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@+id/rll11"
-    android:layout_above="@+id/next_proces_btn">
-    </android.support.recyclerview.widget.RecyclerView>
+    android:layout_above="@+id/next_proces_btn"/>
 
     <Button
         android:id="@+id/next_proces_btn"

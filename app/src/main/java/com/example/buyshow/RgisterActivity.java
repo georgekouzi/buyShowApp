@@ -125,6 +125,17 @@ private void CreateAccount(){
                 userDataMap.put("phone",phone);
                 userDataMap.put("password",password);
                 userDataMap.put("name",name);
+                if(ParentDB.equals("Seller")){
+                    userDataMap.put("sellCounter",0);
+                    userDataMap.put("rank",0);
+                }
+                else if(ParentDB.equals("Buyer")){
+                    userDataMap.put("messageN",0);
+
+                }
+
+
+
                 // RootRef is reference to the firebase
                 RootRef.child(ParentDB).child(phone).updateChildren(userDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

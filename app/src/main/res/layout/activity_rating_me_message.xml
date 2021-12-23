@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/FloralWhite"
+    tools:context=".RatingMeMessageActivity">
+<TextView
+    android:id="@+id/text_rating_seller_bar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello buyer, the seller hopes you enjoy the product.\n
+                              Please rate the seller..."
+    android:textColor="@color/black"
+    android:textSize="17dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="100dp"
+    />
+
+    <RatingBar
+        android:id="@+id/rating_seller_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_rating_seller_bar"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:numStars="5"
+        android:stepSize="1" />
+<Button
+    android:id="@+id/rating_seller"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/rating_seller_bar"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="155dp"
+    android:layout_centerHorizontal="true"
+    android:text="Rate now"
+    android:textColor="@color/black"
+    android:textSize="12dp"
+    android:textStyle="bold"
+
+    />
+
+
+
+
+
+
+
+
+</RelativeLayout>

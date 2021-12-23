@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.buyshow.Model.User;
@@ -18,22 +20,67 @@ import com.example.buyshow.Model.products;
 import com.example.buyshow.ViewHolder.ProductHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
+import java.text.DecimalFormat;
 
 public class SellerProductActivity extends AppCompatActivity {
     private DatabaseReference productsRef;
     private RecyclerView recyclerView;
     private String phone_id;
+    private Button backToOption;
+    private RatingBar ratingBar;
+    private TextView rank;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller_product);
-        productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
+        productsRef = FirebaseDatabase.getInstance().getReference();
         recyclerView = (RecyclerView) findViewById(R.id.seller_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         phone_id = getIntent().getExtras().get("phone_id").toString();
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar_s);
+        rank = (TextView) findViewById(R.id.rating_s);
+
+
+
+        backToOption = (Button)findViewById(R.id.back_s);
+        backToOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SellerProductActivity.this,SellersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        productsRef.child("Seller").child(phone_id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User seller =  snapshot.getValue(User.class);
+                DecimalFormat df = new DecimalFormat("###.#");
+                double  rating =Double.parseDouble( df.format((double)(seller.getRank()) / (double)(seller.getSellCounter())));
+                if(seller.getSellCounter()!=0) {
+                    rank.setText(String.valueOf(rating));
+                    ratingBar.setRating((float) rating);
+                    ratingBar.setIsIndicator(true);
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
 
     }
 
@@ -42,13 +89,15 @@ public class SellerProductActivity extends AppCompatActivity {
         super.onStart();
 
 
-        FirebaseRecyclerOptions<products> options = new FirebaseRecyclerOptions.Builder<products>().setQuery(productsRef,products.class).build();
+        FirebaseRecyclerOptions<products> options = new FirebaseRecyclerOptions.Builder<products>().setQuery(productsRef.child("Products"),products.class).build();
         FirebaseRecyclerAdapter<products, ProductHolder> adapter = new FirebaseRecyclerAdapter<products, ProductHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ProductHolder holder, int position, @NonNull products model) {
                 if(model.getPhone_id().equals(phone_id)) {
 
                     holder.txtProductName.setText(model.getName());
+                    holder.txtRank.setVisibility(View.INVISIBLE);
+                    holder.ratingBar.setVisibility(View.INVISIBLE);
                     holder.txtProductPrice.setText(model.getPrice());
                     holder.txtProductDescription.setText(model.getDescription());
                     Picasso.get().load(model.getImage()).into(holder.imageView);

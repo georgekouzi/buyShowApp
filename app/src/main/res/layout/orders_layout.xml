@@ -6,23 +6,24 @@
 
 
     <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:layout_margin="10dp"
-    android:background="@color/colorPrimaryDark">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/buyer_name"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
             android:text="buyer-name"
             android:textColor="@color/white"
             android:textSize="15dp"
-            android:layout_marginLeft="2dp"
-            android:textStyle="bold"
-            />
-
+            android:textStyle="bold" />
 
 
         <TextView
@@ -30,56 +31,62 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_marginLeft="2dp"
             android:text="Phone-number"
             android:textAlignment="viewEnd"
             android:textColor="@color/white"
             android:textSize="15dp"
-            android:layout_marginLeft="2dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/total_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/phone_number"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
             android:text="Total-price"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/phone_number"
-            android:gravity="center"
-            android:layout_marginTop="25dp"
-            />
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/order_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/total_price"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
             android:text="Address"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/total_price"
-            android:gravity="center"
-            android:layout_marginTop="25dp"
-            />
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/date_time"
+            android:text="Date Time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date Time"
+            android:layout_below="@+id/order_address"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/order_address"
-            android:gravity="center"
-            android:layout_marginTop="25dp"
-            />
+            android:textStyle="bold" />
 
-
-
-
-
-
-
+        <Button
+            android:id="@+id/show_all_products_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/date_time"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/white"
+            android:text="Show This Order Products"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16dp" />
 
     </RelativeLayout>
 

@@ -13,21 +13,31 @@
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_Buyer.xml" value="0.13072916666666667" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_admin.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_buy.xml" value="0.1" />
-        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_buyer.xml" value="0.4" />
-        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_cart.xml" value="0.22708333333333333" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_buyer.xml" value="0.3" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_buyer_message.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_cart.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_login.xml" value="0.2425249169435216" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_message.xml" value="0.13125" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_message_raing.xml" value="0.13125" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_product_details.xml" value="0.1" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_rating_bar.xml" value="0.2" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_rating_me_message.xml" value="0.36" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_rgister.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_add_new_product_activity.xml" value="0.1" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_add_product.xml" value="0.10185185185185185" />
-        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_product.xml" value="0.3" />
-        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_product_details.xml" value="0.29894736842105263" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_buyer_product.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_new_order.xml" value="0.3" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_product.xml" value="0.1" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_seller_product_details.xml" value="0.268" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_sellers.xml" value="0.2" />
         <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/activity_sellers_category.xml" value="0.132" />
-        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/cart_items_layout.xml" value="0.1" />
-        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/products_item_layout.xml" value="0.4" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/cart_items_layout.xml" value="0.2" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/masssege_design.xml" value="0.3" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/orders_layout.xml" value="0.2390625" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/products_item_layout.xml" value="0.18587360594795538" />
+        <entry key="..\:/Users/97254/StudioProjects/BuyShow/app/src/main/res/layout/products_selller_item_layout.xml" value="0.13125" />
         <entry key="..\:/Users/user/Desktop/buyShowApp/app/src/main/res/layout/activity_cart.xml" value="0.28169014084507044" />
         <entry key="..\:/Users/user/Desktop/buyShowApp/app/src/main/res/layout/cart_items_layout.xml" value="0.1" />
       </map>
@@ -42,7 +52,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.2" />
+        <option name="scale" value="0.36" />
       </ProjectState>
     </option>
   </component>
