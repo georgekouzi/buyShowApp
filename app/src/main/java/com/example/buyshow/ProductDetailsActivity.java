@@ -33,7 +33,6 @@ private ElegantNumberButton counterProduct;
 private TextView productPrice,productName,productDetails;
 private ImageView productImage;
 private Button buttonBack,buttonAddProductToCart;
-private int sumOfProduct=0;
 private String productId,phone_id ,BuyerPhone;
 private DatabaseReference cartListRF;
 //private DatabaseReference getProductInfoDB;
@@ -115,30 +114,31 @@ private DatabaseReference cartListRF;
         SimpleDateFormat currentTime =new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentTime.format(calendar.getTime());
 
-        cartListRF=FirebaseDatabase.getInstance().getReference().child("Cart List");
-
+        cartListRF=FirebaseDatabase.getInstance().getReference().child("Cart List");;
+        String pidOrder=phone_id+" "+saveCurrentDate+saveCurrentTime;
         HashMap<String,Object> cartMap = new HashMap<>();
         cartMap.put("pid",productId);
-        cartMap.put("Seller ID",phone_id);
+        cartMap.put("SellerID",phone_id);
+        cartMap.put("BuyerID",BuyerPhone);
+        cartMap.put("pidOrder",pidOrder);
         cartMap.put("pname",productName.getText());
-        cartMap.put("price",productPrice.getText());
+        cartMap.put("price",productPrice.getText().subSequence(6,productPrice.length()-1));
         cartMap.put("date",saveCurrentDate);
         cartMap.put("time",saveCurrentTime);
         cartMap.put("quantity",counterProduct.getNumber());
-        cartMap.put("discount","");
-        cartListRF.child("Buyer View").child(BuyerPhone).child("Products").child(productId).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        cartMap.put("buyerIDOrders","-1");
+        cartListRF.child(BuyerPhone).child("Products").child(productId).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    cartListRF.child("Seller View").child(BuyerPhone).child("Products").child(productId).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    DatabaseReference  cartSellerListRF=FirebaseDatabase.getInstance().getReference().child("Sellers order");
+                    cartSellerListRF.child(pidOrder).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(ProductDetailsActivity.this,"Added To Cart",Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(ProductDetailsActivity.this,BuyerActivity.class);
                                 intent.putExtra("phoneBuyer",BuyerPhone);
-                                intent.putExtra("phone_id",phone_id);
-                                intent.putExtra("pid",productId);
                                 startActivity(intent);
 
                             }

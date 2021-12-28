@@ -56,7 +56,8 @@ public class SellersActivity extends AppCompatActivity {
         checkOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SellersActivity.this,RgisterActivity.class);
+                Intent intent=new Intent(SellersActivity.this,sellersNewOrderActivity.class);
+                intent.putExtra("phone_id",phone);
                 startActivity(intent);
             }
         });

@@ -14,6 +14,24 @@
         Xmlns:tools="http://schemas.android.com/tools"
         tools:replace="android:theme">
         <activity
+            android:name=".UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sendProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sellersNewOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GetMessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".RatingMeMessageActivity"
             android:exported="false" />
         <activity
@@ -42,9 +60,6 @@
             android:exported="true" />
         <activity
             android:name=".BuyerActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AdminActivity"
             android:exported="true" />
         <activity
             android:name=".SellersActivity"

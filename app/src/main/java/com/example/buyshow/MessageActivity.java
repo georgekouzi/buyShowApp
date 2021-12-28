@@ -30,7 +30,7 @@ import java.text.DecimalFormat;
 public class MessageActivity extends AppCompatActivity {
     private DatabaseReference productsRef;
     private RecyclerView recyclerView;
-    private String userType,phone_id;
+    private String userType,phoneBuyer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,7 @@ public class MessageActivity extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.message_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         productsRef =FirebaseDatabase.getInstance().getReference().child("Message");
-        phone_id =  getIntent().getExtras().get("phoneBuyer").toString();
+        phoneBuyer =  getIntent().getExtras().get("phoneBuyer").toString();
         userType =  getIntent().getExtras().get("usertype").toString();
 
 
@@ -50,30 +50,39 @@ public class MessageActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseRecyclerOptions<message> options = new FirebaseRecyclerOptions.Builder<message>().setQuery(productsRef.child(userType),message.class).build();
-
         FirebaseRecyclerAdapter<message, MessageHolder> adapter = new FirebaseRecyclerAdapter<message, MessageHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull MessageHolder holder, int position, @NonNull message model) {
-                if(model.getPhone_id().equals(phone_id)) {
+                if(model.getPhone_id().equals(phoneBuyer)) {
                     holder.titleText.setText(model.getTitle());
-
-
                     holder.itemView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             if (model.getType() == 0) {
-
-
                                 Intent intent = new Intent(MessageActivity.this, RatingMeMessageActivity.class);
                                 intent.putExtra("from", model.getFrom());
+                                intent.putExtra("phoneBuyer",phoneBuyer);
+                                intent.putExtra("pid",model.getPid());
+                                intent.putExtra("usertype",userType);
+                                intent.putExtra("Type",model.getType());
+
                                 startActivity(intent);
                             }
 
 
+                            else {
+                                Intent intent = new Intent(MessageActivity.this, GetMessageActivity.class);
+                                intent.putExtra("from", model.getFrom());
+                                intent.putExtra("phoneBuyer",phoneBuyer);
+                                intent.putExtra("usertype",userType);
+                                intent.putExtra("pid",model.getPid());
+                                intent.putExtra("Type",model.getType());
 
 
+                                startActivity(intent);
 
 
+                            }
 
                         }
                     });

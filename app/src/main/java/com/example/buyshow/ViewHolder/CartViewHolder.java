@@ -12,15 +12,13 @@ import com.example.buyshow.R;
 
 public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public TextView txtProductQuantity,txtProductName,txtProductPrice;
-    public ImageView imageView;
     public ItemClickListner listner;
 
     public CartViewHolder(View itemView) {
         super(itemView);
-        imageView = (ImageView) itemView.findViewById(R.id.product_image_new);
-        txtProductQuantity = itemView.findViewById(R.id.product_name  );
-        txtProductName = itemView.findViewById(R.id.product_name);
-        txtProductPrice =  itemView.findViewById(R.id.product_price_new);
+        txtProductQuantity = itemView.findViewById(R.id.cart_product_quantity  );
+        txtProductName = itemView.findViewById(R.id.cart_product_name);
+        txtProductPrice =  itemView.findViewById(R.id.cart_product_price);
 
 
     }

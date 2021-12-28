@@ -1,23 +1,72 @@
 package com.example.buyshow.Model;
 
 public class Cart {
-    private String pid,pname , price,quantity,discounnt;
+    private String date,time,pidOrder,BuyerID, pid, pname ,SellerID, price,quantity,buyerIDOrders;
     public Cart(){
 
     }
-    public Cart(String pid, String pname , String price, String quantity, String discounnt){
+    public Cart(String time,String date,String pidOrder ,String BuyerID,String SellerID,String pid, String pname , String price, String quantity, String buyerIDOrders){
         this.pid = pid;
+        this.pidOrder=pidOrder;
         this.pname = pname;
         this.price = price;
-        this.price = quantity = quantity;
-        this.discounnt = discounnt;
+        this.quantity = quantity;
+        this.buyerIDOrders = buyerIDOrders;
+        this.SellerID=SellerID;
+        this.BuyerID=BuyerID;
+        this.date=date;
+        this.time=time;
 
+
+    }
+
+    public String getDate() {
+        return date;
+    }
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+
+    public String getTime() {
+        return time;
+    }
+    public void setTime(String date) {
+        this.time = time;
+    }
+
+
+
+
+
+
+    public String getPidOrder() {
+        return pidOrder;
+    }
+
+    public void setPidOrder(String pidOrder) {
+        this.pidOrder = pidOrder;
+    }
+
+
+
+    public String getBuyerID() {
+        return BuyerID;
+    }
+    public void setBuyerID(String BuyerID) {
+        this.BuyerID = BuyerID;
+    }
+
+    public String getSellerID() {
+        return SellerID;
+    }
+    public void setSellerID(String SellerID) {
+        this.SellerID = SellerID;
     }
 
     public String getPid() {
         return pid;
     }
-
     public void setPid(String pid) {
         this.pid = pid;
     }
@@ -25,7 +74,6 @@ public class Cart {
     public String getPname() {
         return pname;
     }
-
     public void setPname(String pname) {
         this.pname = pname;
     }
@@ -46,12 +94,12 @@ public class Cart {
         this.quantity = quantity;
     }
 
-    public String getDiscounnt() {
-        return discounnt;
+    public String getBuyerIDOrders() {
+        return buyerIDOrders;
     }
 
-    public void setDiscounnt(String discounnt) {
-        this.discounnt = discounnt;
+    public void setBuyerIDOrders(String buyerIDOrders) {
+        this.buyerIDOrders = buyerIDOrders;
     }
 
 

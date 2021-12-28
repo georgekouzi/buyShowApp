@@ -187,7 +187,8 @@ And if the password is not the same then an error message is sent and the login 
                             else if(ParentDB.equals("Admin")){
                                 Toast.makeText(LoginActivity.this,"your logged in Successfully.",Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Intent intent=new Intent(LoginActivity.this, AdminActivity.class);
+                                Intent intent=new Intent(LoginActivity.this, AdminsActivity.class);
+                                intent.putExtra("phone",phone);
                                 startActivity(intent);
                             }
 

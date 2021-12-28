@@ -1,12 +1,12 @@
 package com.example.buyshow.Model;
 
-public class SellerOrders {
-    private String name ,phone ,address ,city ,state , date , time, totalAmount;
+public class BuyerOrders {
+    private String BuyerID,state,country,pidOrder,name ,phone ,address ,city , date , time, totalAmount;
 
-    public SellerOrders() {
+    public BuyerOrders() {
     }
 
-    public SellerOrders(String name, String phone, String address, String city, String state, String date, String time, String totalAmount) {
+    public BuyerOrders(String BuyerID,String country ,String pidOrder, String name, String phone, String address, String city, String state, String date, String time, String totalAmount) {
         this.name = name;
         this.phone = phone;
         this.address = address;
@@ -14,7 +14,35 @@ public class SellerOrders {
         this.state = state;
         this.date = date;
         this.time = time;
+        this.country=country;
         this.totalAmount = totalAmount;
+        this.pidOrder=pidOrder;
+        this.BuyerID=BuyerID;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+
+    public String getBuyerID() {
+        return BuyerID;
+    }
+
+    public void setBuyerID(String BuyerID) {
+        this.BuyerID = BuyerID;
+    }
+
+    public String getPidOrder() {
+        return pidOrder;
+    }
+
+    public void setPidOrder(String pidOrder) {
+        this.pidOrder = pidOrder;
     }
 
     public String getName() {

@@ -91,13 +91,14 @@ private ProgressDialog loadingBar;
                             Toast.makeText(MainActivity.this,"your logged in Successfully."+ParentDB,Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
                             Intent intent=new Intent(MainActivity.this, BuyerActivity.class);
-                            intent.putExtra("phone",userPhoneKey);
+                            intent.putExtra("phoneBuyer",userPhoneKey);
                             startActivity(intent);
                         }
                         else if(ParentDB.equals("Admin")){
                             Toast.makeText(MainActivity.this,"your logged in Successfully.",Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
-                            Intent intent=new Intent(MainActivity.this, AdminActivity.class);
+                            Intent intent=new Intent(MainActivity.this, AdminsActivity.class);
+                            intent.putExtra("phone",userPhoneKey);
                             startActivity(intent);
                         }
 

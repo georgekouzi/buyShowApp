@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@color/FloralWhite"
 
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/FloralWhite"
+        >
 
     <TextView
         android:id="@+id/title_m"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="17dp"
@@ -17,5 +24,6 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="italic|bold" />
+    </RelativeLayout>
 
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
